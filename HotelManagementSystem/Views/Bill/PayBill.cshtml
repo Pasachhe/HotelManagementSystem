@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "PayBill";
+}
+
+
+
+<div>
+
+    <h2>Pay Bill</h2>
+
+    <table class="dl-horizontal">
+
+        <tr>
+            <td>
+                <h4>No of Days Stayed:</h4>
+            </td>
+            <td>
+                @Session["days"]
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <h4>Price of Room Per Day:</h4>
+            </td>
+            <td>
+                @Session["PriceOfRoom"]
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <h4>Total:</h4>
+            </td>
+            <td>
+                @Session["TotalPrice"]
+            </td>
+
+        </tr>
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Pay", "Back", new { }, new { @class = "btn btn-xs btn-success" })
+</p>

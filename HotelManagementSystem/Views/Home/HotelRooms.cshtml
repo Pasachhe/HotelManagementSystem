@@ -1,0 +1,55 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Room>
+
+@{
+    ViewBag.Title = "HotelRooms";
+}
+
+<h2>HotelRooms</h2>
+
+<p>
+    @Html.ActionLink("Cacel Reservation", "ReservationCancel", new { }, new { @class = "btn btn-xs btn-danger" }) |
+
+    @Html.ActionLink("Login", "Login", new { }, new { @class = "btn btn-xs btn-primary" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Reserve", "Reserve", new { id = item.RoomId }) |
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Back", "Index") |

@@ -1,0 +1,65 @@
+﻿@model HotelManagementSystem.Models.Employee
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@Html.DisplayFor(model => model.EmployeeName)</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <p>
+        @Html.ActionLink("Employees", "Staff",new { }, new { @class = "btn btn-xs btn-primary" }) |
+    </p>
+    <dl class="dl-horizontal">
+        <dt>
+          Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+        Contact No :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+          Email :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+
+        <dt>
+           Post  :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hotel.HotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hotel.HotelName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }, new { @class = "btn btn-xs btn-primary" }) |
+    @Html.ActionLink("Record Of Customers", "Record", new { }, new { @class = "btn btn-xs btn-primary" }) |
+    @Html.ActionLink("Rooms", "Room", new { id = Model.HotelId }, new { @class = "btn btn-xs btn-primary" }) |
+    
+</p>

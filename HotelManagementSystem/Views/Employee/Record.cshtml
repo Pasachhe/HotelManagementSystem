@@ -1,0 +1,66 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Record>
+
+@{
+    ViewBag.Title = "Record";
+}
+
+<h2>Record</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckedOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hotel.HotelName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckedIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckedOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hotel.HotelName)
+        </td>
+       
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Back", "Back", new { }, new { @class = "btn btn-xs btn-primary" })|

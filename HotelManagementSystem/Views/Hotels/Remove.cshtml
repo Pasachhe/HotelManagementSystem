@@ -1,0 +1,49 @@
+﻿@model HotelManagementSystem.Models.Hotel
+
+@{
+    ViewBag.Title = "Remove";
+}
+
+<h2>Remove</h2>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelContact)
+        </dd>
+
+    </dl>
+
+  
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("No", "Hotels")
+        </div>
+}
+</div>
